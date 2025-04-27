@@ -1,0 +1,173 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+<!-- <meta name="google-signin-client_id" content="536306522395-pm3b4feahi796qoo1jj4t0so41cqfvum.apps.googleusercontent.com"> -->
+    <title> Studypals Home</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/templatemo-chain-app-dev.css">
+    <link rel="stylesheet" href="assets/css/animated.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+
+  </head>
+
+<body>
+ 
+ <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="index.html" class="logo">
+           <img height=100px width=300px src="assets/images/logo.png" alt="Studypals logo">   
+            </a>
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li class="scroll-to-section"><a href="Home.html" class="active">Home</a></li>
+              <li class="scroll-to-section"><a href="Help.html">Help& Documentation</a></li>
+      
+              <li><div class="gradient-button"><a  href="#" id="logout"><i class="fa fa-sign-in-alt"></i> Log Out</a></div></li> 
+            </ul>        
+            <a class='menu-trigger'>
+                <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+<br><br>
+  <div id="services" class="services section">
+    <div style="margin-top: -2%;" class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="section-heading  wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
+            <h4>Amazing <em>Services &amp; Features</em> for you</h4>
+            <img src="assets/images/heading-line-dec.png" alt="">
+          </div><br><br>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top: -5%;" class="container">
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="service-item first-service">
+            <div class="icon"></div>
+            <h4>Create Group Session</h4>
+            <p>Create an online meeting and invite your friends, Let's study together !!</p>
+            <div class="gradient-button">
+              <a href="Meet.html">Start Meeting <i class="fa fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="service-item second-service">
+            <div class="icon"></div>
+            <h4>Schedule A Session</h4>
+            <p>Schedule a meeting for later plan your upcoming activities with our STUDYPALS Calendar feature.</p>
+            <div class="gradient-button">
+              <a href="Calender.html">Open Calendar <i class="fa fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="service-item third-service">
+            <div class="icon"></div>
+            <h4>Ask Us Your Query</h4>
+            <p>Got stucked? Don't worry we have your back Ask any question to our AI Bot he'll give you perfect solutions.</p>
+            <div class="gradient-button">
+              <a href="ChatGpt.html">Open AI Bot <i class="fa fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="service-item fourth-service">
+            <div class="icon"></div>
+            <h4>Your Chat Group</h4>
+            <p>Call all your friends to the group, Let's all get connected !!</p><br><br>
+            <div class="gradient-button">
+              <a href="Chatting.html">Chat App <i class="fa fa-arrow-right"></i></a><br>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- <script>
+    function signOut() {
+      var auth2 = gapi.auth2.getAuthInstance();
+      auth2.signOut().then(function () {
+        console.log('User signed out.');
+      });
+    }
+  </script> -->
+  <!-- Scripts -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/owl-carousel.js"></script>
+<script src="assets/js/animation.js"></script>
+<script src="assets/js/imagesloaded.js"></script>
+<script src="assets/js/popup.js"></script>
+<script src="assets/js/custom.js"></script>
+
+<script type="module">
+      // Import the functions you need from the SDKs you need
+	  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+	  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
+	  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+	  // TODO: Add SDKs for Firebase products that you want to use
+	  // https://firebase.google.com/docs/web/setup#available-libraries
+
+	  // Your web app's Firebase configuration
+	  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+	  const firebaseConfig = {
+	    apiKey: "AIzaSyASwnRPadcg_b3hwUSjYyA11PAFhiJrON8",
+        authDomain: "studypals-47fd2.firebaseapp.com",
+        databaseURL: "https://studypals-47fd2-default-rtdb.firebaseio.com",
+        projectId: "studypals-47fd2",
+        storageBucket: "studypals-47fd2.appspot.com",
+        messagingSenderId: "122859635019",
+        appId: "1:122859635019:web:c7ae10ace19637eb5128ce"
+	  };
+
+	  // Initialize Firebase
+	  const app = initializeApp(firebaseConfig);
+	  const analytics = getAnalytics(app);
+	  const auth = getAuth();
+	  console.log(app);
+
+  //----- Logout code start	  
+  document.getElementById("logout").addEventListener("click", function() {
+    signOut(auth).then(() => {
+      // Sign-out successful.
+      location.replace("index.html");
+      // document.getElementById('logout').style.display = 'none';
+    }).catch((error) => {
+      // An error happened.
+      console.log('An error happened.');
+    });		  		  
+  });
+  //----- End
+  </script>
+</body>

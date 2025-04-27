@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <title>Chat</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!--
+
+TemplateMo 570 Chain App Dev
+
+https://templatemo.com/tm-570-chain-app-dev
+
+-->
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/templatemo-chain-app-dev.css">
+    <link rel="stylesheet" href="assets/css/animated.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+</head>
+<style>
+    body {
+          margin: 0;
+          padding: 0;
+          background-color: #f1f1f1;
+          font-family: Arial, sans-serif;
+      }
+      
+      .chatbox {
+          max-width: 600px;
+          margin: 50px auto;
+          background-color: #fff;
+          border-radius: 5px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+      
+      .header {
+          background-color: #f9f9f9;
+          padding: 15px;
+          border-bottom: 1px solid #ddd;
+      }
+      
+      .header h2 {
+          margin-right: 20px;
+          text-align: right;
+          font-size: 18px;
+          color: #333;
+      }
+      
+      .chat-container {
+          padding: 20px;
+          height: 300px;
+          overflow-y: scroll;
+          scrollbar-width: thin;
+      }
+      
+      .chat-container::-webkit-scrollbar {
+          width: 8px;
+      }
+      
+      .chat-container::-webkit-scrollbar-thumb {
+          background-color: rgba(0, 0, 0, 0.3);
+          border-radius: 4px;
+      }
+      
+      .chat-container p {
+          margin: 10px 0;
+      }
+      
+      .user-message {
+          text-align: right;
+      }
+      
+      .ai-message {
+          text-align: left;
+      }
+      
+      .user-message .message-content {
+          background-color: #DCF8C6;
+          border-radius: 5px;
+          padding: 8px;
+          display: inline-block;
+          max-width: 80%;
+      }
+      
+      .ai-message .message-content {
+          background-color: #E5E5EA;
+          border-radius: 5px;
+          padding: 8px;
+          display: inline-block;
+          max-width: 80%;
+      }
+      
+      .input-container {
+          padding: 10px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          border-top: 1px solid #ddd;
+      }
+      
+      .input-container input {
+          width: 80%;
+          padding: 8px;
+          border: 1px solid #ddd;
+          border-radius: 3px;
+      }
+      
+      .input-container button {
+          padding: 8px 15px;
+          border: none;
+          background-color: #4CAF50;
+          color: #fff;
+          border-radius: 3px;
+          cursor: pointer;
+      }
+      
+      .input-container button:hover {
+          background-color: #45a049;
+      }
+</style>
+
+ <!-- ***** Header Area Start ***** -->
+ <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="index.html" class="logo">
+              <img height=100px width=300px src="assets/images/logo.png" alt="Studypals logo">   
+            </a>
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li><div class="gradient-button"><a href="Home.html"><i class="fa fa-arrow-right"></i> Back to Home</a></div></li> 
+            </ul>        
+            <a class='menu-trigger'>
+                <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+<br><br>
+<div style="margin-top: -2%;" id="services" class="services section">
+    <div  class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="section-heading  wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
+            <h4>Let's <em>Socialize</em></h4>
+            <img src="assets/images/heading-line-dec.png" alt=""/>
+</div></div></div></div></div>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
+
+<!-- Include Firebase Realtime Database -->
+<script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-database.js"></script>
+
+<script>
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+         apiKey: "AIzaSyASwnRPadcg_b3hwUSjYyA11PAFhiJrON8",
+         authDomain: "studypals-47fd2.firebaseapp.com",
+         databaseURL: "https://studypals-47fd2-default-rtdb.firebaseio.com",
+         projectId: "studypals-47fd2",
+         storageBucket: "studypals-47fd2.appspot.com",
+         messagingSenderId: "122859635019",
+         appId: "1:122859635019:web:c7ae10ace19637eb5128ce"
+    };
+    
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    var myName = prompt("Enter your name");
+
+    function sendMessage() {
+        // Get message
+        var message = document.getElementById("message").value;
+        // message.classList.add("user-message");
+
+        // Save in the database
+        firebase.database().ref("messages").push().set({
+            "sender": myName,
+            "message": message
+        });
+
+        // Prevent form from submitting
+        return false;
+    }
+
+    function deleteMessage(self) {
+        // Get message ID
+        var messageId = self.getAttribute("data-id");
+
+        // Delete message
+        firebase.database().ref("messages").child(messageId).remove();
+    }
+
+    // Attach listener for delete message
+    firebase.database().ref("messages").on("child_removed", function (snapshot) {
+        // Remove message node
+        document.getElementById("message-" + snapshot.key).innerHTML = "This message has been removed";
+    });
+
+    // Listen for incoming messages
+    firebase.database().ref("messages").on("child_added", function (snapshot) {
+        var html = "";
+        // Give each message a unique ID
+        html += "<li id='message-" + snapshot.key + "'>";
+        // Show delete button if message is sent by me
+        if (snapshot.val().sender === myName) {
+            html += "<button data-id='" + snapshot.key + "' onclick='deleteMessage(this);'>";
+            html += "Delete";
+            html += "</button>";
+        }
+        html += snapshot.val().sender + ": " + snapshot.val().message;
+        html += "</li>";
+
+        document.getElementById("messages").innerHTML += html;
+    });
+</script>
+<div style="margin-top: -5%;" class="chatbox">
+
+    <div class="header">
+        <h2>Chat App</h2>
+    </div>    <!-- Create a list -->
+<ul class="chat-container" id="messages"></ul>
+
+<!-- Create a form to send a message -->
+<form class="input-container" onsubmit="return sendMessage();">
+    <input id="message" placeholder="Enter message" autocomplete="off">
+    <button type="submit">Submit</button>
+</form>
+</div>
+
+  <!-- Scripts -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/animation.js"></script>
+  <script src="assets/js/imagesloaded.js"></script>
+  <script src="assets/js/popup.js"></script>
+  <script src="assets/js/custom.js"></script>
+</body>
+</html>
